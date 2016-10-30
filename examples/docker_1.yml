@@ -1,0 +1,31 @@
+---
+- q: Run /bin/echo "hi" (ubuntu)
+  a:
+    - docker run ubuntu:latest /bin/echo "hi"
+- q: Run /bin/bash in an interactive container (ubuntu)
+  a:
+    - docker run -it ubuntu:latest /bin/bash
+- q: Run daemonized container (nginx)
+  a: 
+    - docker run -d nginx:latest
+- q: Show logs of container insane_babbage
+  a:
+    - docker logs insane_babbage
+- q: Stop container insane_babbage
+  a: 
+    - docker stop insane_babbage
+- q: List running containers
+  a:
+     - docker ps
+- q: List all (running and stopped) containers
+  a:
+     - docker ps -a
+- q: Run container using the name web (ubuntu)
+  a:
+     - docker run --name web ubuntu:latest
+- q: Remove container named web (force)
+  a:
+     - docker rm -f web
+- q: Remove image ubuntu:latest
+  a:
+     - docker rmi ubuntu:latest

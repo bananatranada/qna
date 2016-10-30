@@ -1,0 +1,42 @@
+- q: Add user bob
+  a:
+     - useradd -m bob
+- q: Change bob's password
+  a:
+     - passwd bob
+- q: List all users 
+  a:
+     - cat /etc/passwd
+- q: List all groups and their users
+  a:
+     - cat /etc/group
+- q: List bob's groups
+  a:
+     - groups bob
+- q: Add group called dev
+  a:
+     - groupadd dev
+- q: Remove group dev
+  a:
+     - groupdel dev
+- q: Remove user bob
+  a:
+     - userdel bob
+- q: Add group dev to bob's group
+  a:
+     - gpasswd -a bob dev
+- q: Switch user to root
+  a:
+     - su -
+- q: Switch user to bob
+  a:
+     - su - bob
+- q: List all users in group dev
+  a:
+     - grep dev /etc/group
+- q: Remove group dev from user bob's groups
+  a:
+     - gpasswd -d bob dev
+- q: Give user sudo access 
+  a:
+     - visudo

@@ -1,0 +1,30 @@
+- q: Update package manager (yum)
+  a:
+     - sudo yum update
+- q: Install essential repo (yum)
+  a:
+     - sudo yum install epel-release
+- q: Install vim (yum)
+  a:
+     - sudo yum install vim
+- q: Uninstall vim (yum)
+  a:
+     - sudo yum remove vim
+- q: Search for vim (yum)
+  a:
+     - yum search vim
+- q: Update package manager (apt) 
+  a:
+     - sudo apt-get update
+- q: Install vim (apt)
+  a:
+     - sudo apt-get install vim
+- q: Uninstall vim (apt)
+  a:
+     - sudo apt-get remove vim
+- q: Search for vim (apt)
+  a:
+     - apt-cache search vim
+- q: Add ppa:ansible/ansible repo (apt)
+  a:
+     - sudo apt-add-repository ppa:ansible/ansible

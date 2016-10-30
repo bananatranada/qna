@@ -1,0 +1,40 @@
+---
+- q: Merge the updated master branch (in my-branch)
+  a:
+     - git merge master
+- q: Fetch origin's master branch (in master)
+  a:
+     - git fetch origin
+- q: Merge the origin's master branch (in master)
+  a:
+     - git merge --ff-only origin/master
+- q: Fetch upstream's master branch (in master)
+  a:
+     - git fetch upstream
+- q: Merge the upstream's master branch (in master)
+  a:
+     - git merge --ff-only upstream/master
+- q: Push local master to origin  
+  a:
+     - git push origin master
+- q: Fixup commit abc (rewrites history; must rebase after)
+  a:
+     - git commit --fixup abc
+- q: Delete origin's my-branch
+  a:
+     - git push origin :my-branch
+- q: Delete local my-branch
+  a:
+     - git branch -d my-branch
+- q: Create worktree for my-branch in worktrees/
+  a:
+     - git worktree add worktrees/my-branch my-branch
+- q: Remove all untracked files
+  a:
+     - git clean -xdf
+- q: Check if origin's branches have been deleted
+  a:
+    - git remote prune origin --dry-run
+- q: Prune/cleanup local branches that aren't in origin
+  a:
+    - git remote prune origin 
