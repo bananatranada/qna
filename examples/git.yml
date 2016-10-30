@@ -1,0 +1,87 @@
+- q: Initialize git
+  a:
+     - git init
+- q: Initialize commit
+  a:
+     - git commit -m "init"
+- q: Stage/track all files
+  a:
+     - git add .
+- q: Stage only tracked files
+  a:
+     - git add -u
+- q: Show all remotes
+  a:
+     - git remote -v
+- q: Show all branches
+  a:
+     - git branch -a
+- q: Reset latest commit to unstaged (rewrite history)
+  a:
+     - git reset HEAD~1
+- q: Reset latest commit to staged (rewrite history)
+  a:
+     - git reset --soft HEAD~1
+- q: Reset latest commit to nothing (rewrite history)
+  a:
+     - git reset --hard HEAD~1
+- q: Reset latest commit as a new commit (does not rewrite history)
+  a:
+     - git revert HEAD
+- q: Update staged to match the latest commit's file1 (staged automatically updates working directory by nature; only works on staged files - green)
+  a:
+     - git reset HEAD file1
+- q: Update working directory to match the latest commit's file1 (only works on working directory files)
+  a:
+     - git checkout HEAD file1
+- q: Save and clear current working directory and staged files (does not affect untracked)
+  a: 
+     - git stash 
+- q: Pop saved working directory and staged files
+  a:
+     - git stash pop
+- q: Are most git commands aware of untracked files?
+  a:
+     - no
+- q: Rebase the updated master branch (in my-branch)
+  a:
+     - git rebase -i master
+- q: Merge the updated master branch (in my-branch)
+  a:
+     - git merge master
+- q: Fetch origin's master branch (in master)
+  a:
+     - git fetch origin
+- q: Merge the origin's master branch (in master)
+  a:
+     - git merge --ff-only origin/master
+- q: Fetch upstream's master branch (in master)
+  a:
+     - git fetch upstream
+- q: Merge the upstream's master branch (in master)
+  a:
+     - git merge --ff-only upstream/master
+- q: Push local master to origin  
+  a:
+     - git push origin master
+- q: Fixup commit abc (rewrites history; must rebase after)
+  a:
+     - git commit --fixup abc
+- q: Delete origin's my-branch
+  a:
+     - git push origin :my-branch
+- q: Delete local my-branch
+  a:
+     - git branch -d my-branch
+- q: Create worktree for my-branch in worktrees/
+  a:
+     - git worktree add worktrees/my-branch my-branch
+- q: Remove all untracked files
+  a:
+     - git clean -xdf
+- q: Check if origin's branches have been deleted
+  a:
+    - git remote prune origin --dry-run
+- q: Prune/cleanup local branches that aren't in origin
+  a:
+    - git remote prune origin 

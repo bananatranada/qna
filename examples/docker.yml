@@ -1,0 +1,65 @@
+---
+- q: Run /bin/echo "hi" (ubuntu)
+  a:
+    - docker run ubuntu:latest /bin/echo "hi"
+- q: Run /bin/bash in an interactive container (ubuntu)
+  a:
+    - docker run -it ubuntu:latest /bin/bash
+- q: Run daemonized container (nginx)
+  a: 
+    - docker run -d nginx:latest
+- q: Show logs of container insane_babbage
+  a:
+    - docker logs insane_babbage
+- q: Stop container insane_babbage
+  a: 
+    - docker stop insane_babbage
+- q: List running containers
+  a:
+     - docker ps
+- q: List all (running and stopped) containers
+  a:
+     - docker ps -a
+- q: Run container using the name web (ubuntu)
+  a:
+     - docker run --name web ubuntu:latest
+- q: Remove container named web (force)
+  a:
+     - docker rm -f web
+- q: Remove image ubuntu:latest
+  a:
+     - docker rmi ubuntu:latest
+- q: Show container web's info
+  a:
+     - docker inspect web
+- q: List images
+  a:
+     - docker images
+- q: Show container web's processes
+  a:
+     - docker top web
+- q: Start nginx using its own ports (name is web)
+  a:
+     - docker run -d -P --name web nginx:latest
+- q: Start nginx using local port 3000 (name is web)
+  a:
+     - docker run -d -p 3000:80 --name web nginx:latest
+- q: Start nginx using local port 3000 with volume /my/www /container/www with name web
+  a:
+     - docker run -d -p 3000:80 -v /my/www:/container/www --name web nginx:latest
+- q: Restart container web (from stop)
+  a:
+     - docker restart web
+- q: Remove all non-running containers
+  a:
+     - docker rm $(docker ps -a -q)
+- q: Build local Dockerfile (bkgunby/my-nginx)
+  a:
+     -  docker build -t bkgunby/my-nginx
+- q: Search for ubuntu image
+  a:
+     - docker search ubuntu
+- q: Create a custom base image from container named buntu as ubuntu:web
+  a:
+     - docker commit buntu ubuntu:web
+

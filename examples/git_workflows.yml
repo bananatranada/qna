@@ -1,0 +1,34 @@
+- q: Initialize as owner (remote is git@bkgunby)
+  a:
+     - git init
+     - git remote add origin git@bkgunby
+     - touch README.md
+     - git add .
+     - git commit -m "init"
+     - git push origin master
+- q: Push as owner
+  a:
+     - git checkout master
+     - git fetch origin
+     - git merge --ff-only origin/master
+     - git checkout my-branch
+     - git rebase -i master
+     - git push --force-with-lease origin my-branch
+- q: Initialize as contributor (upstream is git@bkgunby; origin is git@my-fork)
+  a:
+     - git clone git@my-fork
+     - git remote add upstream git@bkgunby
+     - git branch my-branch
+     - git checkout my-branch
+- q: Push as contributor
+  a:
+     - git checkout master
+     - git fetch upstream
+     - git merge --ff-only upstream/master
+     - git checkout my-branch
+     - git rebase -i master
+     - git push --force-with-lease origin my-branch
+- q: Prune origin
+  a:
+     - git remote prune origin --dry-run
+     - git remote prune origin
