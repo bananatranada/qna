@@ -1,0 +1,18 @@
+- q: Test connectivity to google.com
+  a:
+     - ping google.com
+- q: Find IP address of google.com
+  a:
+     - dig google.com
+- q: Let network connections
+  a:
+     - netstat
+- q: Show routing table
+  a:
+     - ip route
+- q: Trace packet to google.com
+  a:
+     - traceroute google.com
+- q: Show networking settings
+  a:
+     - ip addr

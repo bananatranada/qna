@@ -1,0 +1,18 @@
+- q: Compress zip1 to archive.zip
+  a:
+     - zip -r archive.zip dir1
+- q: Uncompress archive.zip to tmp1
+  a:
+     - unzip archive.zip -d tmp1
+- q: Compress dir1 to archive.tar.gz
+  a:
+     - tar -zcvf archive.tar.gz dir1
+- q: Uncompress archive.tar.gz to tmp1
+  a:
+     - tar -zxvf archive.tar.gz -C tmp1
+- q: Compress dir1 to archive.tar.bz2
+  a:
+     - tar -jcvf archive.tar.bz2 dir1
+- q: Uncompress archive.tar.bz2 to tmp1
+  a:
+     - tar -jxvf archive.tar.bz2 -C tmp1

@@ -1,0 +1,42 @@
+- q: Hashbang
+  a:
+     - "#!/bin/bash"
+- q: Always use this
+  a:
+     - set -eo pipefail
+- q: Echo variable var1
+  a:
+     - echo "${var1}"
+- q: Set var1 the output of "ls"
+  a:
+     - var1="$(ls)"
+- q: Call main function
+  a:
+     - main "$@"
+- q: Flags for file/directory/both existence
+  a:
+     - f/d/e
+- q: String equality operator
+  a:
+     - ==
+- q: Numbers for stdin/stdout/stderr
+  a:
+     - 0/1/2
+- q: Redirect stdout to file1
+  a:
+     - ">file1"
+- q: Redirect stdout and append to file1
+  a:
+     - ">>file1"
+- q: Redirect stderr to file1
+  a:
+     - 2>file1
+- q: Redirect stdout and stderr to file1
+  a:
+     - "&>file1"
+- q: Accept file1's input
+  a:
+     - <file1
+- q: Show only stderr by copying stdout's target to stderr's target, then silencing stdout 
+  a:
+     - 2>&1 >/dev/null

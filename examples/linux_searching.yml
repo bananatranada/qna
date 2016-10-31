@@ -1,0 +1,9 @@
+- q: Find file or directory with name "google" from current directory
+  a:
+     - find . -iname "*google*"
+- q: Find files with "text1" in current directory
+  a:
+     - grep -Rin "text1" .
+- q: Replace all occurrences of "hello" to "bye" in file1
+  a:
+     - sed -ie 's/hello/bye/g' file1

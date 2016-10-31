@@ -1,0 +1,27 @@
+- q: Initialize vagrant
+  a:
+     - vagrant init
+- q: Initialize vagrant with centos/7
+  a:
+     - vagrant init centos/7
+- q: List vagrant boxes
+  a:
+     - vagrant box list
+- q: Remove vagrant box centos/7
+  a:
+     - vagrant box remove centos/7
+- q: Boot up vagrant
+  a:
+     - vagrant up
+- q: SSH into vagrant
+  a:
+     - vagrant ssh
+- q: Destroy a vagrant VM
+  a:
+     - vagrant destroy
+- q: List all vagrant VM's
+  a:
+     - vagrant global-status
+- q: Destroy vagrant VM asdf
+  a:
+     - vagrant destroy asdf
