@@ -18,7 +18,7 @@
      - vagrant ssh
 - q: Destroy a vagrant VM
   a:
-     - vagrant destroy
+     - vagrant destroy -f
 - q: List all vagrant VM's
   a:
      - vagrant global-status

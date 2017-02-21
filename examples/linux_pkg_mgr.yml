@@ -1,3 +1,4 @@
+# You should always do an update after adding a repo
 - q: Update package manager (yum)
   a:
      - sudo yum update

@@ -1,0 +1,25 @@
+- q: Show all mounted devices
+  a:
+     - df -m
+- q: Format /dev/asdf to ext3
+  a:
+     - mkfs -t ext3 /dev/asdf
+- q: Mount /dev/asdf to /mnt
+  a:
+     - mount /dev/asdf /mnt
+- q: Partition /dev/asdf
+  a:
+     - fdisk /dev/asdf
+- q: List partitions
+  a:
+     - fdisk -l
+- q: Unmount everything in /etc/fstab
+  a:
+     - unmount -a
+- q: Mount everything in /etc/fstab
+  a:
+     - mount -a
+- q: Show list of total sizes of file and directories
+  a:
+     - du -sh *
+     

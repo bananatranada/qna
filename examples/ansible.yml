@@ -1,0 +1,15 @@
+- q: Ping web1 (inventory file)
+  a:
+     - ansible -i inventory -m ping web1
+- q: List all modules
+  a:
+     - ansible-doc -l 
+- q: Get info of module ping
+  a:
+     - ansible-doc ping
+- q: Get playbook snippet of module ping  
+  a:
+     - ansible-doc -s ping
+- q: Execute playbook playbook.yml (inventory file)
+  a:
+     - ansible-playbook -i inventory playbook.yml

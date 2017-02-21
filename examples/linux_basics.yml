@@ -13,13 +13,13 @@
 - q: Show OS
   a:
      - uname -m
-- q: Create shortcut called file2 from file1
+- q: Create shortcut called file2 to file1
   a:
      - ln -s file1 file2
 - q: Copying a file to a directory retains the file name (yes/no)
   a:
      - yes
-- q: Copy all files, directories, hidden files of dir1 to dir2 
+- q: Copy all files, directories, hidden files of dir1 to dir2
   a:
      - cp -a dir1/. dir2
 - q: Create dir1/dir2
